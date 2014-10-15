@@ -13,5 +13,3 @@ def make_frame(t):
 
 clip = mpy.VideoClip(make_frame, duration=duration)
 clip.write_gif('example1.gif',fps=15, opt="OptimizePlus", fuzz=10)
-#clip.write_gif("./example1.gif",fps=15, opt="OptimizePlus", fuzz=10, program='ImageMagick')
-#clip.write_gif("./example1.gif",fps=15, program='ImageMagick')
