@@ -20,19 +20,19 @@ def supersample(clip, d, nframes):
     return clip.fl(fl)
 
 def make_frame(t):
-    gradient= gizeh.ColorGradient("linear",((0,(0,.5,1)),(1,(0,1,1))),
-                               xy1=(0,-r), xy2=(0,r))
-    surface = gizeh.Surface(W,H)
-    #circle1 = gizeh.circle(radius1, xy = (W/2,H/2), fill=(1,0,0))
-    circle1 = gizeh.circle(radius1, xy = (W/2,H/2), stroke=gradient, stroke_width=2)
-    circle1.draw(surface)
-    #circle2 = gizeh.circle(radius2, xy = (W/2,H/2), fill=(0,0,0))
-    #circle2.draw(surface)
+
     angle = (duration - t)/duration * 360
     radians = math.radians(angle)
+    cosR = math.cos(radians)
+    sinR = math.sin(radians)
+    gradient= gizeh.ColorGradient("linear",((0,(0,.5,1)),(1,(0,1,1))), xy1=(-cosR,-sinR), xy2=(cosR,sinR))
+    surface = gizeh.Surface(W,H)
+
+    circle1 = gizeh.circle(radius1, xy = (W/2,H/2), stroke=gradient, stroke_width=2)
+    circle1.draw(surface)
 
     # Orbiting planet
-    circle3 = gizeh.circle(radius3, xy = (W/2 + math.cos(radians) * radius1, H/2 + math.sin(radians) * radius1), fill=(1,0,1))
+    circle3 = gizeh.circle(radius3, xy = (W/2 + cosR * radius1, H/2 + sinR * radius1), fill=(1,0,1))
     circle3.draw(surface)
 
     return surface.get_npimage()
