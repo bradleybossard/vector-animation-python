@@ -8,6 +8,7 @@ r = 10 # radius of the ball
 DJ, HJ = 50, 35 # distance and height of the jumps
 ground = 0.75*H # y-coordinate of the ground
 num_balls = 10
+fps = 25
 
 def make_shadow(t):
     x = (-W/3)+(5*W/3)*(t/D)
@@ -33,7 +34,8 @@ def make_ball(t, alpha):
 
 def make_frame(t):
     surface = gz.Surface(W,H, bg_color=(1,1,1))
-    spacer = 3.0 / num_balls
+    #spacer = 3.0 / num_balls
+    spacer = 1.0 / fps
     alpha_dec = 1.0 / num_balls
     for i in range(num_balls):
       tracer_t = t - (i * spacer)
@@ -51,4 +53,4 @@ def make_frame(t):
     return surface.get_npimage()
 
 clip = mpy.VideoClip(make_frame, duration=D)
-clip.write_gif("myimage2.gif",fps=25, opt="OptimizePlus")
+clip.write_gif("myimage2.gif",fps=fps, opt="OptimizePlus")
