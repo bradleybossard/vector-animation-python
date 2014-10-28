@@ -11,10 +11,8 @@ def my_filter(get_frame, t):
     frame, using vector graphics."""
 
     surface = gz.Surface(w,h)
-    fill = (gz.ImagePattern(get_frame(t), pixel_zero=center).scale(1.5, center=center))
-    #fill = (gz.ImagePattern(get_frame(t), pixel_zero=center))
-    #pattern = gz.ImagePattern(get_frame(t), pixel_zero=center)
-    #fill = pattern.scale(1.5, None, center=center)
+    fill = (gz.ImagePattern(get_frame(t), pixel_zero=center)
+            .scale(1.5, center=center))
     for (nfaces,angle,f) in ([3, 0, 1.0/6],
                               [5, np.pi/3, 3.0/6],
                               [7, 2*np.pi/3, 5.0/6]):
