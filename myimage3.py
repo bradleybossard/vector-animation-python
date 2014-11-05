@@ -7,6 +7,14 @@ D = 3
 fps = 25
 
 stars = []
+numStars = 50
+
+
+class Star():
+  x = 0.0
+  y = 0.0
+  vecX = 0.0
+  vecY = 0.0
 
 """
 def make_ball(t, alpha):
@@ -20,10 +28,17 @@ def make_ball(t, alpha):
 
     return ball
 """
+def init():
+  for i in range(numStars):
+    star = Star()
+    #star = (x: random.random() * 10, y: random.random())
+    star.vecX = random.random() * 10;
+    star.vecY = random.random() * 10;
+    stars.append(star)
 
 def make_frame(t):
     alpha = 0.8
-    radius = 10.0
+    radius = 2.0
     surface = gz.Surface(W,H, bg_color=(1,1,1))
     """
     #spacer = 3.0 / num_balls
