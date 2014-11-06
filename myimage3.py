@@ -2,14 +2,14 @@ import random
 import gizeh as gz
 import moviepy.editor as mpy
 
-
+# Width/Height, Duration, framerate
 W,H = 400, 400
 D = 3
 fps = 25
 
+# Array containing instances of Star class
 stars = []
 numStars = 50
-
 
 class Star():
   x = 0.0
@@ -17,18 +17,7 @@ class Star():
   vecX = 0.0
   vecY = 0.0
 
-"""
-def make_ball(t, alpha):
-
-    gradient = gz.ColorGradient(type="radial",
-                    stops_colors = [(0,(1,0,0, 0.8)),(1,(0.1,0,0,alpha))],
-                    xy1=[0.3,-0.3], xy2=[0,0], xy3 = [0,1.4])
-    x = (-W/3)+(5*W/3)*(t/D)
-    y = ground - HJ*4*(x % DJ)*(DJ-(x % DJ))/DJ**2
-    coef = (HJ-y)/HJ
-
-    return ball
-"""
+# Initialize stars with position and random sizes/vectors
 def init():
   for i in range(numStars):
     star = Star()
@@ -52,7 +41,6 @@ def make_frame(t):
     star = stars[i]
     star.x += star.vecX;
     star.y += star.vecY;
-    #ball = gz.circle(r=radius, fill=gradient).translate((W/2, H/2))
     ball = gz.circle(r=star.radius, fill=gradient).translate((star.x, star.y))
     ball.draw(surface)
   return surface.get_npimage()
