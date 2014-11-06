@@ -1,8 +1,9 @@
+import random
 import gizeh as gz
 import moviepy.editor as mpy
 
 
-W,H = 200,75
+W,H = 400, 400
 D = 3
 fps = 25
 
@@ -31,41 +32,31 @@ def make_ball(t, alpha):
 def init():
   for i in range(numStars):
     star = Star()
-    #star = (x: random.random() * 10, y: random.random())
-    star.vecX = random.random() * 10;
-    star.vecY = random.random() * 10;
+    star.x = W / 2;
+    star.y = H / 2;
+    star.radius = random.uniform(-3, 3)
+    star.vecX = random.uniform(-3, 3)
+    star.vecY = random.uniform(-3, 3)
+    print star.x, star.y, star.vecX, star.vecY
     stars.append(star)
 
 def make_frame(t):
-    alpha = 0.8
-    radius = 2.0
-    surface = gz.Surface(W,H, bg_color=(1,1,1))
-    """
-    #spacer = 3.0 / num_balls
-    spacer = 1.0 / fps
-    alpha_dec = 1.0 / num_balls
-    for i in range(num_balls):
-      tracer_t = t - (i * spacer)
-      alpha = 1.0 - (i * alpha_dec)
-      print "  " + str(alpha)
-      #tracer_ball = make_bawll(tracer_t, 1.0 - spacer)
-      tracer_ball = make_ball(tracer_t, alpha)
-      tracer_ball.draw(surface)
 
+  alpha = 0.8
+  surface = gz.Surface(W,H, bg_color=(1,1,1))
 
-    ball = make_ball(t, 1.0)
+  gradient = gz.ColorGradient(type="radial",
+                  stops_colors = [(0,(1,0,0, alpha)),(1,(0.1,0,0,alpha))],
+                  xy1=[0.3,-0.3], xy2=[0,0], xy3 = [0,1.4])
+  for i in range(numStars):
+    star = stars[i]
+    star.x += star.vecX;
+    star.y += star.vecY;
+    #ball = gz.circle(r=radius, fill=gradient).translate((W/2, H/2))
+    ball = gz.circle(r=star.radius, fill=gradient).translate((star.x, star.y))
     ball.draw(surface)
-    #shadow = make_shadow(t)
-    #shadow.draw(surface)
-    """
+  return surface.get_npimage()
 
-    gradient = gz.ColorGradient(type="radial",
-                    stops_colors = [(0,(1,0,0, alpha)),(1,(0.1,0,0,alpha))],
-                    xy1=[0.3,-0.3], xy2=[0,0], xy3 = [0,1.4])
-    #ball = gz.circle(r=1, fill=gradient).scale(r).translate((x,y))
-    ball = gz.circle(r=radius, fill=gradient).translate((W/2, H/2))
-    ball.draw(surface)
-    return surface.get_npimage()
-
+init()
 clip = mpy.VideoClip(make_frame, duration=D)
 clip.write_gif("myimage3.gif", fps=fps, opt="OptimizePlus")
