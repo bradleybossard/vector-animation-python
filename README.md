@@ -16,6 +16,6 @@ Pictures are worth a 1000 words... I'll only post my top 5 favorites as not to s
 
 Links
 -----
-http://zulko.github.io/blog/2014/09/20/vector-animations-with-python/
-https://dribbble.com/beesandbombs
-http://patakk.tumblr.com/
+[Zulko] (http://zulko.github.io/blog/2014/09/20/vector-animations-with-python/)
+[Beesandbombs] (https://dribbble.com/beesandbombs)
+[Patakk] (http://patakk.tumblr.com/)
