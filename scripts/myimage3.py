@@ -47,4 +47,4 @@ def make_frame(t):
 
 init()
 clip = mpy.VideoClip(make_frame, duration=D)
-clip.write_gif("myimage3.gif", fps=fps, opt="OptimizePlus")
+clip.write_gif("gifs/myimage3.gif", fps=fps, opt="OptimizePlus")

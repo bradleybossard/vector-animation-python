@@ -17,4 +17,4 @@ def make_frame(t):
     return 255*((surface.get_npimage()+1) % 2)
 
 clip = mpy.VideoClip(make_frame, duration=D).resize(.5)
-clip.write_gif("example9.gif",fps=15, fuzz=30, opt="OptimizePlus")
+clip.write_gif("gifs/example9.gif",fps=15, fuzz=30, opt="OptimizePlus")

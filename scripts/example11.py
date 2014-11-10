@@ -22,4 +22,4 @@ def my_filter(get_frame, t):
         shape.draw(surface)
     return surface.get_npimage()
 
-clip.fl(my_filter).write_gif("example11.gif")
+clip.fl(my_filter).write_gif("gifs/example11.gif")

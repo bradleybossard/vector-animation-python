@@ -31,4 +31,4 @@ def make_frame(t):
     return surface.get_npimage()
 
 clip = mpy.VideoClip(make_frame=make_frame).set_duration(D)
-clip.write_gif("example7.gif",fps=15, fuzz=30)
+clip.write_gif("gifs/example7.gif",fps=15, fuzz=30)

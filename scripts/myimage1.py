@@ -94,7 +94,7 @@ def make_frame(t):
 
 init()
 clip = mpy.VideoClip(make_frame, duration=duration)
-clip.write_gif('myimage1.gif',fps=15)
+clip.write_gif('gifs/myimage1.gif',fps=15)
 
 #new_clip = supersample(clip, d=0.05, nframes=5)
 #new_clip.write_gif('myimage1.gif',fps=15, opt="OptimizePlus", fuzz=10)

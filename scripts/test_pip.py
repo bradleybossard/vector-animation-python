@@ -1,3 +1,5 @@
+#This is a little test script to figure out which directories pip install libraries are located.
+
 import pip
 for package in pip.get_installed_distributions():
     name = package.project_name # SQLAlchemy, Django, Flask-OAuthlib

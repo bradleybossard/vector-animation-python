@@ -5,4 +5,4 @@ circle = gizeh.circle (r=40, # radius, in pixels
                        fill= (1,0,0)) # 'red' in RGB coordinates
 circle.draw( surface ) # draw the circle on the surface
 surface.get_npimage() # export as a numpy array (we will use that)
-surface.write_to_png("japanese_flag.png") # export as a PNG
+surface.write_to_png("gifs/japanese_flag.png") # export as a PNG

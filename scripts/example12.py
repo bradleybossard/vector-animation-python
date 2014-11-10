@@ -29,4 +29,4 @@ clip = mpy.VideoFileClip("example10.gif")
 w, h = clip.size
 clip_with_zoom = clip.fx(add_zoom, target_center = [w/2, h/3], zoomx=3,
                    zoom_center = [5*w/6, h/4], zoom_radius=15)
-clip_with_zoom.write_gif("example12.gif")
+clip_with_zoom.write_gif("gifs/example12.gif")
