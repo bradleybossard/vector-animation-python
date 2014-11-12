@@ -1,5 +1,5 @@
 #import random
-#import numpy as np
+import numpy as np
 import pytweening
 import gizeh as gz
 import moviepy.editor as mpy
@@ -10,6 +10,7 @@ duration = 3
 fps = 25
 numBalls = 10
 radius = 10.0
+circleRadius = 30.0
 alpha = 1.0
 
 # Init function
@@ -23,17 +24,20 @@ def make_frame(t):
   gradient = gz.ColorGradient(type="radial",
                   stops_colors = [(0,(1,0,0, alpha)),(1,(0.9,0,0,alpha))],
                   xy1=[0.3,-0.3], xy2=[0,0], xy3 = [0,1.4])
-  y = H / 2
   for i in range(numBalls):
-    x = float(i) / numBalls * W
-    #newRadius = pytweening.easeInOutSine((duration - t) / duration) * radius
     if (t < duration/2):
-    #newRadius = pytweening.easeInOutBounce((duration - t) / duration) * radius
       newRadius = pytweening.easeInOutBounce(2 * t / duration) * radius
+      newCircleRadius = pytweening.easeInOutBounce(2 * t / duration) * circleRadius
     else:
       newRadius = pytweening.easeInOutBounce(1 - (t / duration)) * radius
+      newCircleRadius = pytweening.easeInOutBounce(1 - (t / duration)) * circleRadius
 
-    ball = gz.circle(r=newRadius, fill=gradient).translate((x, y))
+    angle = (2 * np.pi / numBalls) * i
+    #center = (W/2) + gz.polar2cart(newCircleRadius, angle)
+    center = (W/2) + gz.polar2cart(circleRadius, angle)
+
+    #ball = gz.circle(r=newRadius, fill=gradient).translate((x, y))
+    ball = gz.circle(r=newRadius, fill=gradient).translate(center)
     ball.draw(surface)
 
   return surface.get_npimage()
