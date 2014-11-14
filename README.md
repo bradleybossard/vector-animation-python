@@ -19,3 +19,5 @@ Links
 [Zulko] (http://zulko.github.io/blog/2014/09/20/vector-animations-with-python/)<br>
 [Beesandbombs] (https://dribbble.com/beesandbombs)<br>
 [Patakk] (http://patakk.tumblr.com/)<br>
+
+[Image of easing functions] (https://i.imgur.com/KYaNM6b.png)
