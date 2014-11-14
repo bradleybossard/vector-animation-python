@@ -21,3 +21,6 @@ Links
 [Patakk] (http://patakk.tumblr.com/)<br>
 
 [Image of easing functions] (https://i.imgur.com/KYaNM6b.png)
+
+[Rose mathematics] (http://en.wikipedia.org/wiki/Rose_(mathematics)
+[Spherical mathematics] (http://en.wikipedia.org/wiki/Spherical_coordinate_system)
