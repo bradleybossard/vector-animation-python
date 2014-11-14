@@ -24,3 +24,5 @@ Links
 
 [Rose mathematics] (http://en.wikipedia.org/wiki/Rose_(mathematics))<br>
 [Spherical mathematics] (http://en.wikipedia.org/wiki/Spherical_coordinate_system)<br>
+
+[Regular polygons with polar coordinates] (http://math.stackexchange.com/questions/41940/is-there-an-equation-to-describe-regular-polygons/41954#41954)
