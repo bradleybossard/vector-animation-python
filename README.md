@@ -15,13 +15,16 @@ Pictures are worth a 1000 words... I'll only post my top 5 favorites as not to s
 
 Links
 -----
-[Zulko] (http://zulko.github.io/blog/2014/09/20/vector-animations-with-python/)<br>
-[Beesandbombs] (https://dribbble.com/beesandbombs)<br>
-[Patakk] (http://patakk.tumblr.com/)<br>
+[Zulko](http://zulko.github.io/blog/2014/09/20/vector-animations-with-python/)<br>
 
-[Image of easing functions] (https://i.imgur.com/KYaNM6b.png)<br>
+[Beesandbombs](https://dribbble.com/beesandbombs)<br>
 
-[Rose mathematics] (http://en.wikipedia.org/wiki/Rose_(mathematics))<br>
-[Spherical mathematics] (http://en.wikipedia.org/wiki/Spherical_coordinate_system)<br>
+[Patakk](http://patakk.tumblr.com/)<br>
 
-[Regular polygons with polar coordinates] (http://math.stackexchange.com/questions/41940/is-there-an-equation-to-describe-regular-polygons/41954#41954)
+[Image of easing functions](https://i.imgur.com/KYaNM6b.png)
+
+[Rose mathematics](http://en.wikipedia.org/wiki/Rose_(mathematics))
+
+[Spherical mathematics](http://en.wikipedia.org/wiki/Spherical_coordinate_system)<br>
+
+[Regular polygons with polar coordinates](http://math.stackexchange.com/questions/41940/is-there-an-equation-to-describe-regular-polygons/41954#41954)
